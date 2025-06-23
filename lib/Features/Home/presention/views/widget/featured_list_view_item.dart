@@ -8,7 +8,7 @@ class FeaturedListViewitem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double scale = isActive ? 1.05 : 0.9;
+    double scale = isActive ? 1.04 : 0.88;
 
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
