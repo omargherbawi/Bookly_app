@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+class BookItem extends StatelessWidget {
+  const BookItem({super.key});
 
   @override
   Widget build(BuildContext context) {
