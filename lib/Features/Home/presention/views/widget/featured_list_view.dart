@@ -49,7 +49,7 @@ class _FeaturedListViewState extends State<FeaturedListView> {
         itemBuilder: (context, index) {
           bool isActive = index == activeIndex;
           return Padding(
-            padding: const EdgeInsets.all(6),
+            padding: const EdgeInsets.all(3),
             child: FeaturedListViewitem(isActive: isActive),
           );
         },
