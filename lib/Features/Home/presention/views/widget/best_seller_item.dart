@@ -53,7 +53,12 @@ class BookItem extends StatelessWidget {
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      Text('Free', style: Styles.textStyle16),
+                      Text(
+                        'Free',
+                        style: Styles.textStyle16.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       const Spacer(),
                       RatingWidget(),
                       const SizedBox(width: 50),
