@@ -1,11 +1,10 @@
 part of 'newst_book_cubit.dart';
 
-@immutable
 sealed class NewstBookState {}
 
 final class NewstBookInitial extends NewstBookState {}
 
-final class NewstBookBookLoading extends NewstBookState {}
+final class NewstBookLoading extends NewstBookState {}
 
 final class NewstBookSuccess extends NewstBookState {
   final List<BookModel> books;

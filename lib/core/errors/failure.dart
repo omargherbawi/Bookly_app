@@ -1,8 +1,11 @@
 import 'package:dio/dio.dart';
 
-abstract class Failure {}
+abstract class Failure {
+  String get errmessage;
+}
 
 class ServerFailure extends Failure {
+  @override
   final String errmessage;
 
   ServerFailure(this.errmessage);
