@@ -21,7 +21,10 @@ class BookDetailsViewBody extends StatelessWidget {
           child: SizedBox(
             width: 350,
             height: 350,
-            child: const FeaturedListViewitem(),
+            child: const FeaturedListViewitem(
+              imageurl:
+                  'https://miblart.com/wp-content/uploads/2024/01/main-3-1-scaled.jpg',
+            ),
           ),
         ),
         Center(

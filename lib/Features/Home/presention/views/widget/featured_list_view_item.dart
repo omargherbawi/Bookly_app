@@ -1,10 +1,14 @@
-import 'package:book_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListViewitem extends StatelessWidget {
   final bool isActive;
+  final String imageurl;
 
-  const FeaturedListViewitem({super.key, this.isActive = false});
+  const FeaturedListViewitem({
+    super.key,
+    this.isActive = false,
+    required this.imageurl,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,9 @@ class FeaturedListViewitem extends StatelessWidget {
           curve: Curves.easeInOut,
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(35),
+              borderRadius: BorderRadius.circular(18),
               image: DecorationImage(
-                image: AssetImage(AssetsData.book),
+                image: NetworkImage(imageurl),
                 fit: BoxFit.fill,
               ),
             ),

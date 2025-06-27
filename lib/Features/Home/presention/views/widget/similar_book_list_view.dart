@@ -13,7 +13,10 @@ class SimilarBookListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return FeaturedListViewitem();
+          return FeaturedListViewitem(
+            imageurl:
+                'https://miblart.com/wp-content/uploads/2024/01/main-3-1-scaled.jpg',
+          );
         },
       ),
     );
