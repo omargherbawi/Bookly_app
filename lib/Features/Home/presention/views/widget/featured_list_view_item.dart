@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListViewitem extends StatelessWidget {
@@ -22,13 +23,13 @@ class FeaturedListViewitem extends StatelessWidget {
           scale: scale,
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              image: DecorationImage(
-                image: NetworkImage(imageurl),
-                fit: BoxFit.fill,
-              ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: CachedNetworkImage(
+              imageUrl: imageurl,
+              fit: BoxFit.fill,
+              errorWidget: (context, url, error) =>
+                  const Center(child: Icon(Icons.error)),
             ),
           ),
         ),
