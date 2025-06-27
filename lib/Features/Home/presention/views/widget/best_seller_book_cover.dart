@@ -1,8 +1,9 @@
-import 'package:book_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerBookCover extends StatelessWidget {
-  const BestSellerBookCover({super.key});
+  final String imageurl;
+
+  const BestSellerBookCover({super.key, required this.imageurl});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class BestSellerBookCover extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             image: DecorationImage(
-              image: AssetImage(AssetsData.book),
+              image: NetworkImage(imageurl),
               fit: BoxFit.fill,
             ),
           ),

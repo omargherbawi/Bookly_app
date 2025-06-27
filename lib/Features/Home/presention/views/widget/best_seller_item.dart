@@ -1,3 +1,4 @@
+import 'package:book_app/Features/Home/data/models/book_model/book_model.dart';
 import 'package:book_app/Features/Home/presention/views/book_detalis_view.dart';
 import 'package:book_app/Features/Home/presention/views/widget/best_seller_book_cover.dart';
 import 'package:book_app/Features/Home/presention/views/widget/rating_widget.dart';
@@ -7,7 +8,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class BookItem extends StatelessWidget {
-  const BookItem({super.key});
+  final BookModel bookModel;
+
+  const BookItem({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,9 @@ class BookItem extends StatelessWidget {
       child: Row(
         children: [
           const SizedBox(width: 30),
-          const BestSellerBookCover(),
+          BestSellerBookCover(
+            imageurl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+          ),
           const SizedBox(width: 25),
           Expanded(
             child: SizedBox(
@@ -33,7 +38,7 @@ class BookItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      'Harry Potter and the Goblet of Fire',
+                      bookModel.volumeInfo!.title!,
                       maxLines: 2,
                       style: Styles.textStyle20.copyWith(
                         fontFamily: 'GT Sectra Fine',
@@ -41,11 +46,14 @@ class BookItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 3),
-                  Text('J.K Rowling', style: Styles.textStyle14),
+                  Text(
+                    bookModel.volumeInfo!.authors![0],
+                    style: Styles.textStyle14,
+                  ),
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      Text('19.99 JD', style: Styles.textStyle16),
+                      Text('Free', style: Styles.textStyle16),
                       const Spacer(),
                       RatingWidget(),
                       const SizedBox(width: 50),

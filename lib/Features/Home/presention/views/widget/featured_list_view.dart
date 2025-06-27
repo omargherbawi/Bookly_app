@@ -50,7 +50,7 @@ class _FeaturedListViewState extends State<FeaturedListView> {
             child: ListView.builder(
               controller: _controller,
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
                 bool isActive = index == activeIndex;
                 return Padding(
