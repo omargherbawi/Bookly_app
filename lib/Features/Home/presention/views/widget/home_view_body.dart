@@ -12,28 +12,29 @@ class HomeViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: Column(
-            children: [
-              CustomAppBar(),
-              FeaturedListView(),
-              SizedBox(height: 28),
-              Row(
-                children: [
-                  SizedBox(width: 30),
-                  Text(
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomAppBar(),
+                FeaturedListView(),
+                const SizedBox(height: 28),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Text(
                     "Flutter Books",
                     style: Styles.textStyle20.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: 15),
-            ],
+                ),
+                const SizedBox(height: 15),
+                BestSellerListView(), // ✅ بتسكرول طبيعي وما في تعارض
+              ],
+            ),
           ),
         ),
-
-        SliverFillRemaining(child: BestSellerListView()),
       ],
     );
   }

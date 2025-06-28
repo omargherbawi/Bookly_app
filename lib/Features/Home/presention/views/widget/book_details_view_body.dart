@@ -64,7 +64,7 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
         ),
 
-        SimilarBookListView(),
+        SimilarBookListView(bookmodel: bookmodel),
       ],
     );
   }

@@ -47,7 +47,10 @@ class BookItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Text(
-                    bookModel.volumeInfo!.authors![0],
+                    bookModel.volumeInfo?.authors != null &&
+                            bookModel.volumeInfo!.authors!.isNotEmpty
+                        ? bookModel.volumeInfo!.authors![0]
+                        : 'Unknown Author',
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(height: 10),
@@ -55,7 +58,7 @@ class BookItem extends StatelessWidget {
                     children: [
                       Text(
                         'Free',
-                        style: Styles.textStyle16.copyWith(
+                        style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
