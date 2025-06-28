@@ -24,7 +24,12 @@ class BestSellerListView extends StatelessWidget {
         } else if (state is NewstBookFailure) {
           return Text(state.message);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.3),
+              Center(child: CircularProgressIndicator()),
+            ],
+          );
         }
       },
     );

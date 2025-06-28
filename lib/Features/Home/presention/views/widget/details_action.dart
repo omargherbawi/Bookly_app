@@ -14,7 +14,7 @@ class DetailsAction extends StatelessWidget {
             child: CustomButton(
               backgroundColor: Colors.white,
               text: Text(
-                '19.99 JD',
+                '0 JD',
                 style: Styles.textStyle18.copyWith(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
