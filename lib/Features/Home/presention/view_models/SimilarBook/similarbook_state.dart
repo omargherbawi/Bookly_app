@@ -1,6 +1,5 @@
 part of 'similarbook_cubit.dart';
 
-@immutable
 sealed class SimilarbookState {}
 
 final class SimilarbookInitial extends SimilarbookState {}
