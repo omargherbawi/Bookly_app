@@ -56,6 +56,7 @@ class _FeaturedListViewState extends State<FeaturedListView> {
                 return Padding(
                   padding: const EdgeInsets.only(left: 2, top: 6, bottom: 6),
                   child: FeaturedListViewitem(
+                    bookModel: state.books[index],
                     isActive: isActive,
                     imageurl:
                         state.books[index].volumeInfo?.imageLinks?.thumbnail ??

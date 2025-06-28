@@ -24,6 +24,7 @@ class BookDetailsViewBody extends StatelessWidget {
             width: 350,
             height: 350,
             child: FeaturedListViewitem(
+              bookModel: bookmodel,
               imageurl: bookmodel.volumeInfo!.imageLinks!.thumbnail!,
             ),
           ),

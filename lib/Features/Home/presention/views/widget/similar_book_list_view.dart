@@ -34,6 +34,7 @@ class _SimilarBookListViewState extends State<SimilarBookListView> {
               itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return FeaturedListViewitem(
+                  bookModel: state.books[index],
                   imageurl:
                       state.books[index].volumeInfo?.imageLinks?.thumbnail ??
                       "",
