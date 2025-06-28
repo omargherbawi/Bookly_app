@@ -1,3 +1,4 @@
+import 'package:book_app/Features/Home/data/models/book_model/book_model.dart';
 import 'package:book_app/Features/Home/presention/views/widget/custom_details_app_bar_.dart';
 import 'package:book_app/Features/Home/presention/views/widget/details_action.dart';
 import 'package:book_app/Features/Home/presention/views/widget/featured_list_view_item.dart';
@@ -7,7 +8,8 @@ import 'package:book_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  final BookModel bookmodel;
+  const BookDetailsViewBody({super.key, required this.bookmodel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +23,15 @@ class BookDetailsViewBody extends StatelessWidget {
           child: SizedBox(
             width: 350,
             height: 350,
-            child: const FeaturedListViewitem(
-              imageurl:
-                  'https://miblart.com/wp-content/uploads/2024/01/main-3-1-scaled.jpg',
+            child: FeaturedListViewitem(
+              imageurl: bookmodel.volumeInfo!.imageLinks!.thumbnail!,
             ),
           ),
         ),
         Center(
           child: Text(
-            'Harry Potter and the Goblet of Fire',
+            textAlign: TextAlign.center,
+            bookmodel.volumeInfo!.title!,
             style: Styles.textStyle20.copyWith(
               fontFamily: 'GT Sectra Fine',
               fontWeight: FontWeight.bold,
@@ -38,7 +40,12 @@ class BookDetailsViewBody extends StatelessWidget {
         ),
         const SizedBox(height: 5),
 
-        Center(child: Text('J.K. Rowling', style: Styles.textStyle16)),
+        Center(
+          child: Text(
+            bookmodel.volumeInfo!.authors![0],
+            style: Styles.textStyle16,
+          ),
+        ),
         const SizedBox(height: 8),
         RatingWidget(),
         const SizedBox(height: 13),
