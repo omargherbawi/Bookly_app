@@ -60,7 +60,7 @@ class BookItem extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      RatingWidget(),
+                      PageCount(bookModel: bookModel),
                       const SizedBox(width: 50),
                     ],
                   ),

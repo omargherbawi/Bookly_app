@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
                 children: [
                   SizedBox(width: 30),
                   Text(
-                    "Best Seller",
+                    "Flutter Books",
                     style: Styles.textStyle20.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

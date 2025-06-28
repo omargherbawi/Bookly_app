@@ -47,7 +47,7 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        RatingWidget(),
+        PageCount(bookModel: bookmodel),
         const SizedBox(height: 13),
 
         Padding(
